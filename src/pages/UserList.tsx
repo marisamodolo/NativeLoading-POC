@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 import ListItem from '../components/ListItem'
 import SkeletonContent from 'react-native-skeleton-content';
+import Dots from '../components/DotsBounce'
 
 const userLayout: object = {
   width: 60,
@@ -89,13 +90,13 @@ const UserList: FC = () => {
         } else {
           setData(res.results || [])
         }
-        setEndReached(false)
         setRefreshing(false)
       })
       .catch( error => {
         setError(error)
       })
-      setLoading(false)
+    setEndReached(false)
+    setLoading(false)
   }
 
   useEffect(() => {
@@ -126,7 +127,8 @@ const UserList: FC = () => {
           refreshing={refreshing}
           onRefresh={handleRefresh}
           onEndReached={handleEndReached}
-          onEndReachedThreshold={0.01}
+          onEndReachedThreshold={0.001}
+          ListFooterComponent={<Dots />}
         />
       </View>
     </SkeletonContent>

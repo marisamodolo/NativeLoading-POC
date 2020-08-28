@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-native'
 import { StyleSheet, Text, View } from 'react-native';
+import DotsBounce from '../components/DotsBounce'
 
 const Home = () => (
   <View style={styles.container}>
@@ -10,6 +11,7 @@ const Home = () => (
     >
       <Text>Lista de Usuários</Text>
     </Link>
+    <DotsBounce />
   </View>
 )
 
