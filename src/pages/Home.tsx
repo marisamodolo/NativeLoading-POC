@@ -11,6 +11,12 @@ const Home = () => (
     >
       <Text>Lista de Usuários</Text>
     </Link>
+    <Link
+      to="/lista-de-usuarios2"
+      style={styles.button}
+    >
+      <Text>Lista de Usuários 2</Text>
+    </Link>
     <DotsBounce />
   </View>
 )
